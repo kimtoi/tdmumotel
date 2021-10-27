@@ -39,6 +39,22 @@ class HomeController {
         }
     }
 
+    static createpost(req, res) {
+        try {
+            res.render('createpost', {title: 'Đăng bài', page_name: 'createpost', user: req.user});
+        } catch {
+            res.status(500).send(exception);
+        }
+    }
+
+    static managepost(req, res) {
+        try {
+            res.render('managepost', {title: 'Quản lý bài đã đăng', page_name: 'managepost', user: req.user});
+        } catch {
+            res.status(500).send(exception);
+        }
+    }
+
     static introPay (req, res) {
         try {
             res.render('intropay', {title: 'Trả phí bài đăng', page_name: 'intropay', user: req.user});
